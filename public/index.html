@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Report Generator - AI Powered</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">📋</div>
+                    <div class="logo-text">
+                        <h1 class="logo-title">Report Generator</h1>
+                        <p class="logo-subtitle">AI-Powered Event Documentation</p>
+                    </div>
+                </div>
+                <div class="header-badge">
+                    <span class="badge-icon">⚡</span>
+                    <span>Powered by Groq AI</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Instructions Card -->
+                <div class="instructions-card">
+                    <div class="instructions-icon">💡</div>
+                    <div class="instructions-content">
+                        <h3>Quick Start</h3>
+                        <p>Fill in your event details below and let AI generate a professional report in seconds. All fields marked with * are required.</p>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="form-card">
+                    <form id="reportForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="eventTitle">Event Title *</label>
+                <input type="text" id="eventTitle" name="eventTitle" required 
+                       placeholder="AI Awareness Workshop">
+            </div>
+
+            <div class="form-group">
+                <label for="eventType">Event Type *</label>
+                <input type="text" id="eventType" name="eventType" required 
+                       placeholder="Event / Meeting">
+            </div>
+
+            <div class="form-group">
+                <label for="eventDate">Date *</label>
+                <input type="date" id="eventDate" name="eventDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location *</label>
+                <input type="text" id="location" name="location" required 
+                       placeholder="CSE Seminar Hall">
+            </div>
+
+            <div class="form-group">
+                <label for="organizer">Organizer *</label>
+                <input type="text" id="organizer" name="organizer" required 
+                       placeholder="AI Club, CSE Department">
+            </div>
+
+            <div class="form-group">
+                <label for="attendees">Attendees *</label>
+                <input type="text" id="attendees" name="attendees" required 
+                       placeholder="15 students, 3 faculty">
+            </div>
+
+            <div class="form-group">
+                <label for="agenda">Agenda *</label>
+                <textarea id="agenda" name="agenda" rows="3" required 
+                          placeholder="Discuss AI awareness and GPT demos"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="summary">Summary *</label>
+                <textarea id="summary" name="summary" rows="3" required 
+                          placeholder="Introduced AI tools, demoed ChatGPT..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="decisions">Decisions</label>
+                <textarea id="decisions" name="decisions" rows="2" 
+                          placeholder="Plan next training session..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <textarea id="notes" name="notes" rows="2" 
+                          placeholder="Additional notes..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Photos (Optional - Max 3)</label>
+                <input type="file" name="photos" accept="image/*" multiple>
+            </div>
+
+                        <div class="button-group">
+                            <button type="button" id="pdfBtn" class="generate-btn btn-primary">
+                                <span class="btn-icon">📄</span>
+                                <span class="btn-text">Download PDF</span>
+                            </button>
+                            
+                            <button type="button" id="docxBtn" class="generate-btn btn-secondary">
+                                <span class="btn-icon">📝</span>
+                                <span class="btn-text">Download DOC</span>
+                            </button>
+                        </div>
+                        
+                        <div id="statusMessage" class="status-message"></div>
+                    </form>
+                </div>
+
+                <!-- Features -->
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h4>AI-Powered</h4>
+                        <p>Groq AI generates professional content</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📸</div>
+                        <h4>Photo Integration</h4>
+                        <p>Embed up to 3 images in your report</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Lightning Fast</h4>
+                        <p>Generate PDFs in seconds</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>Powered by <strong>MK'S AUTOMATION</strong> • Built with Groq AI & PDFKit</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
