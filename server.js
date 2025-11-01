@@ -156,11 +156,14 @@ app.use((error, req, res, next) => {
     });
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`🚀 Server is running on http://localhost:${PORT}`);
-    console.log(`📋 MoM & Report Generator is ready!`);
-    console.log(`\n⚠️  Make sure to set your GROQ_API_KEY in .env file\n`);
-});
+// Start server only in non-serverless environment
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log(`🚀 Server is running on http://localhost:${PORT}`);
+        console.log(`📋 MoM & Report Generator is ready!`);
+        console.log(`\n⚠️  Make sure to set your GROQ_API_KEY in .env file\n`);
+    });
+}
 
+// Export for Vercel serverless
 module.exports = app;
